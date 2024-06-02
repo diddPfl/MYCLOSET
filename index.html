@@ -1,14 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MYCLOSET</title>
-    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <!--<link href="css/style.css" rel="stylesheet">-->
+    <style>
+
+    </style>
 </head>
+
 <body>
-    <header>
-        
+    <!-- 헤더 로고, 검색창, 로그인, 장바구니-->
+    <header class="head">
+        <div class="logo">MYCLOSET</div>
+        <div class="search-box">
+            <input type="text" placeholder="검색어를 입력하세요">
+            <button>검색</button>
+        </div>
+        <div class="user-actions">
+            <a href="#">로그인</a>
+            <a href="#">장바구니</a>
+        </div>
     </header>
+    <!-- 네비 -->
+    <nav class="menu">
+        <ul>
+            <li><a href="#">NEW</a></li>
+            <li><a href="#">BEST</a></li>
+            <li><a href="#">티셔츠</a></li>
+            <li><a href="#">블라우스</a></li>
+            <li><a href="#">니트/가디건</a></li>
+            <li><a href="#">팬츠</a></li>
+            <li><a href="#">원피스/스커트</a></li>
+        </ul>
+    </nav>
+
+
+
+    <!-- 배너 슬라이드 -->
+    <div class="imgslide">
+        <div class="slidelist">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="images/img1.jpg" alt="이미지1">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/img2.jpg" alt="이미지2">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/img3.jpg" alt="이미지3">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+
+    <!--bottom: 하단메뉴 + Copyright-->
+    <footer class="footer">
+        <footer>
+            <div class="footer-info">
+                <p>회사정보</p>
+                <p>공지사항</p>
+                <p>이용약관</p>
+            </div>
+            <div class="copy">
+                COPYRIGHTⓒ by WEBDESIGN. ALL RIGHTS RESERVED
+            </div>
+            </div>
+            <div class="familysite">
+                <select name="sitelist">
+                    <option value="#">패밀리사이트1</option>
+                    <option value="#">패밀리사이트2</option>
+                    <option value="#">패밀리사이트3</option>
+                </select>
+            </div>
+        </footer>
+
 </body>
+
+<!--<script>
+        /* 이미지 슬라이드 처리 자바스크립트 */
+        let slideIndex = 0;
+        showSlides(); // 슬라이드 처리 함수 호출
+        function showSlides(){
+            let slides = document.querySelectorAll('.slides'); // 슬라이드 이미지들을 모두 가져옴
+            for(let i = 0; i < slides.length; i++){
+                slides[i].style.display = 'none'; // 모든 슬라이드 이미지를 안보이게 처리
+            }
+            slideIndex++; // 다음 슬라이드 이미지로 이동
+            if(slideIndex > slides.length){
+                slideIndex = 1; // 마지막 슬라이드 이미지 이후에는 첫번째 슬라이드 이미지로 이동
+            }
+            slides[slideIndex - 1].style.display = 'block'; // 현재 슬라이드 이미지를 보이게 처리
+            setTimeout(showSlides, 2000); // 2초마다 슬라이드 이미지 변경
+        }
+    </script>
 </html>

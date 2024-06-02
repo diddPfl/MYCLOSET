@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 전체 스타일 */
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        }
+
+        /* 헤더 스타일 */
+        header {
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        }
+
+        .logo {
+        font-size: 24px;
+        font-weight: bold;
+        }
+
+        nav ul {
+        list-style-type: none;
+        display: flex;
+        }
+
+        nav li {
+        margin-right: 20px;
+        }
+
+        nav a {
+        color: #fff;
+        text-decoration: none;
+        }
+
+        .search-box input {
+        padding: 8px;
+        border-radius: 4px;
+        border: none;
+        }
+
+        .search-box button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+        .user-actions a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 10px;
+        }
+
+        /* 메인 콘텐츠 스타일 */
+        .slider {
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+        }
+
+        .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+        }
+
+        .popular-products {
+        padding: 40px;
+        }
+
+        .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+        }
+
+        .product-item img {
+        width: 100%;
+        height: auto;
+        }
+
+        /* 푸터 스타일 */
+        footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+
+        .footer-info p {
+        margin: 0 10px;
+        }
+
+        .social-links a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+        <header>
+          <div class="logo">쇼핑몰 로고</div>
+          <nav>
+            <ul>
+              <li><a href="#">카테고리 1</a></li>
+              <li><a href="#">카테고리 2</a></li>
+              <li><a href="#">카테고리 3</a></li>
+            </ul>
+          </nav>
+          <div class="search-box">
+            <input type="text" placeholder="검색어를 입력하세요">
+            <button>검색</button>
+          </div>
+          <div class="user-actions">
+            <a href="#">장바구니</a>
+            <a href="#">마이페이지</a>
+          </div>
+        </header>
+      
+        <main>
+          <section class="slider">
+            <div class="slide">
+              <img src="slide1.jpg" alt="슬라이드 1">
+              <h2>프로모션 타이틀 1</h2>
+              <p>프로모션 설명 1</p>
+              <a href="#" class="cta-button">자세히 보기</a>
+            </div>
+            <!-- 추가 슬라이드 -->
+          </section>
+      
+          <section class="popular-products">
+            <h2>인기 상품</h2>
+            <div class="product-grid">
+              <div class="product-item">
+                <img src="product1.jpg" alt="상품 1">
+                <h3>상품명 1</h3>
+                <p class="price">99,000원</p>
+                <a href="#" class="add-to-cart">장바구니 담기</a>
+              </div>
+              <!-- 추가 상품 항목 -->
+            </div>
+          </section>
+      
+          <!-- 추가 섹션 (추천 상품, 카테고리, 이벤트 등) -->
+        </main>
+      
+        <footer>
+          <div class="footer-info">
+            <p>회사 정보</p>
+            <p>고객센터</p>
+            <p>이용약관</p>
+          </div>
+          <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+          </div>
+        </footer>
+</body>
+</html>
