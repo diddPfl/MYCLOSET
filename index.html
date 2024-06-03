@@ -128,17 +128,18 @@
         }
 
         footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
         }
 
-        .footer-info p, .copy {
-            margin: 0 10px;
-            font-size: 10px;
+        .footer-info{
+        margin: 0 10px;
+        font-size: 10px;list-style-type: none;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
@@ -190,25 +191,16 @@
 
 
     <!--bottom: 하단메뉴 + Copyright-->
-    <footer class="footer">
-        <footer>
-            <div class="footer-info">
-                <p>회사정보</p>
-                <p>이용약관</p>
-            </div>
-            <div class="copy">
-                COPYRIGHTⓒ by WEBDESIGN. ALL RIGHTS RESERVED
-            </div>
-            </div>
-            <div class="familysite">
-                <select name="sitelist">
-                    <option value="#">패밀리사이트1</option>
-                    <option value="#">패밀리사이트2</option>
-                    <option value="#">패밀리사이트3</option>
-                </select>
-            </div>
-        </footer>
-
+    <footer>
+        <div class="footer-info">
+            <li><a href="#">회사정보</a></li>
+            <li><a href="#">입점상단</a></li>
+            <li><a href="#">제휴문의</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">고객센터</a></li>
+        </div>
+      </footer>
 </body>
 
 
