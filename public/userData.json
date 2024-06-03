@@ -1,0 +1,34 @@
+[
+  {
+    "id": "a@a.com",
+    "password": "1234",
+    "name": "홍길동",
+    "tel": "010-1234-5678",
+    "mailing": "yes"
+  },
+  {
+    "id": "b@a.com",
+    "password": "1234",
+    "name": "김길동",
+    "tel": "010-1234-5679",
+    "mailing": "no"
+  },
+  {
+    "id": "c@a.com",
+    "password": "1234",
+    "name": "이길동",
+    "tel": "010-1234-5677",
+    "mailing": "yes"
+  },
+  {
+    "id": "f@a.com",
+    "password": "1234",
+    "name": "유길동",
+    "mailing": "yes"
+  },
+  {
+    "id": "",
+    "password": "",
+    "name": ""
+  }
+]

@@ -192,8 +192,8 @@
             <button>search</button>
         </div>
         <div class="header-icons">
-            <a href="#" class="join-icon">JOIN</a>
-            <a href="#" class="login-icon">LOGIN</a>
+            <a href="/register" class="join-icon">JOIN</a>
+            <a href="/login" class="login-icon">LOGIN</a>
             <a href="#" class="my-icon">MY</a>
             <a href="#" class="cart-icon">CART</a>
         </div>
@@ -217,7 +217,7 @@
 
         <div class="divider"></div>
 
-        <form action="#" method="post">
+        <form action="/register" method="post">
             <fieldset>
                 <div class="form-div">
                     <label for="id">Email</label>
@@ -241,12 +241,12 @@
                 </div>
                 <div class="form-div mailing">
                     <label for="mailing">이벤트 정보</label>
-                    <input type="radio" name="mailing" value="no"><span>수신</span>
+                    <input type="radio" name="mailing" value="no" checked><span>수신</span>
                     <input type="radio" name="mailing" value="yes"><span>비수신</span>
                 </div>
             </fieldset>
             <div class="button-wrap">
-                <button type="submit" id="cancle">취소</button>
+                <button type="button" id="cancle">취소</button>
                 <button type="submit" id="submit">회원가입</button>
             </div>
         </form>
@@ -270,6 +270,14 @@
                 </select>
             </div>
         </footer>
+
+        <!-- 자바스크립트 -->
+        <script>
+            //취소버튼에 뒤로가기 이벤트 부착
+            const cancle = document.querySelector('#cancle');
+            cancle.addEventListener('click', () => window.history.back());
+
+        </script>
 </body>
 
 </html>
