@@ -17,7 +17,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 15px 20px;
             background-color: #fff;
         }
 
@@ -27,19 +27,31 @@
             font-family: 'Times New Roman'
         }
 
+        .search-box{
+            border-bottom: 1px solid #000;
+            margin-bottom: 15px;
+        }
+
         .search-box input {
+        width: 200px;
         padding: 8px;
-        border-radius: 4px;
         border: none;
+        text-align: left;
+        outline: none;
+        }
+
+        .search-box input:focus {
+        outline: none;
         }
 
         .search-box button {
         color: black;
+        background-color: #fff;
         padding: 8px 16px;
         border: none;
-        border-radius: 4px;
         cursor: pointer;
         }
+        
 
         .header-icons {
             display: flex;
@@ -56,8 +68,7 @@
 
         nav ul.main-nav {
             list-style-type: none;
-            margin: 0;
-            padding: 0;
+            margin-bottom: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -75,8 +86,6 @@
 
         main {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -87,7 +96,6 @@
         .slider {
             position: relative;
             width: 80%;
-            max-width: 800px;
             overflow: hidden;
         }
 
