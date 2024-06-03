@@ -84,9 +84,6 @@
             font-weight: bold;
         }
 
-        
-
-
         /* 푸터 css */
         footer {
             background-color: #333;
@@ -109,23 +106,80 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            padding-top: 40px;
         }
+
+        h2 {
+            font-size: 40px;
+            font-weight: lighter;
+        }
+
+        .divider {
+            width: 90%;
+            height: 1px;
+            background-color: black;
+            margin: 50px 0;
+
+        }
+
         fieldset {
-            padding: 30px 50px 30px;
+            border-top: 1px solid black;
+            margin: 0px;
+            border: none;
+            width: 100%;
         }
-        div {
+
+        label {
+            display: flex;
+            align-items: center;
+            width: 200px;
+            height: 50px;
+        }
+
+        .form-input {
+            border: none;
+            background-color: #f4f4f4;
+            height: 30px;
+            width: 350px;
+            padding: 10px
+        }
+        .form-div {
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             width: 500px;
         }
-        label {
+        span {
+            margin: 0 20px 0;
+        }
+        .mailing {
+            float:left;
+        }
+        .button-wrap{
             display: flex;
-            align-items: center;
-            width: 100px;
+            justify-content: space-around;
+            width: 100%;
+            padding: 50px 0;
+            
+        }
+        button {
+            width: 200px;
             height: 50px;
         }
+        #submit {
+            border: none;
+            background-color: black;
+            color: #fff;
+            padding: 10px;
+        }
+        #cancle {
+            background-color: #fff;
+        }
+
     </style>
 </head>
 
@@ -159,33 +213,42 @@
     </nav>
 
     <main>
+        <h2>JOIN MEMBER</h2>
+
+        <div class="divider"></div>
+
         <form action="#" method="post">
             <fieldset>
-                <div>
-                <label for="id">Email</label>
-                <input type="email" name="id" class="form-input">
-            </div>
-            <div>
-                <label for="password">비밀번호</label>
-                <input type="password" name="password" class="form-input">
-            </div>
-            <div>
-                <label for="name">이름</label>
-                <input type="text" name="name" class="form-input">
-            </div>
-            <div>
-                <label for="birthday">생년월일</label>
-                <input type="date" name="birthday" class="form-input">
-            </div>
-            <div>
-                <label for="phone">전화번호</label>
-                <input type="tel" name="phone" class="form-input">
-            </div>
-            <div>
-                <label for="address">주소</label>
-                <input type="address" name="address" class="form-input">
-            </div>
+                <div class="form-div">
+                    <label for="id">Email</label>
+                    <input type="email" name="id" class="form-input">
+                </div>
+                <div class="form-div">
+                    <label for="password">비밀번호</label>
+                    <input type="password" name="password" class="form-input">
+                </div>
+                <div class="form-div">
+                    <label for="password2">비밀번호 확인</label>
+                    <input type="password" name="password2" class="form-input">
+                </div>
+                <div class="form-div">
+                    <label for="name">이름</label>
+                    <input type="text" name="name" class="form-input">
+                </div>
+                <div class="form-div">
+                    <label for="phone">전화번호</label>
+                    <input type="tel" name="phone" class="form-input">
+                </div>
+                <div class="form-div mailing">
+                    <label for="mailing">이벤트 정보</label>
+                    <input type="radio" name="mailing" value="no"><span>수신</span>
+                    <input type="radio" name="mailing" value="yes"><span>비수신</span>
+                </div>
             </fieldset>
+            <div class="button-wrap">
+                <button type="submit" id="cancle">취소</button>
+                <button type="submit" id="submit">회원가입</button>
+            </div>
         </form>
     </main>
     <!--bottom: 하단메뉴 + Copyright-->
