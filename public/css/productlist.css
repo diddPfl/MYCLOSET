@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+}
+
+.search-box {
+    display: flex;
+    border-bottom: 1px solid #000;
+    margin-bottom: 15px;
+}
+
+.search-box input {
+    width: 200px;
+    padding: 8px;
+    border: none;
+    text-align: left;
+    outline: none;
+}
+
+.search-box button {
+    color: black;
+    background-color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+
+nav ul.main-nav {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+nav ul.main-nav li {
+    margin: 0 15px;
+}
+
+nav ul.main-nav li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+main {
+    margin: 0 auto;
+    /* 상하 여백 0, 좌우 여백 자동 조정으로 중앙 정렬 */
+    width: 90%;
+    /* 페이지 너비를 전체의 90%로 설정, 여기서는 10% 여백이 양 옆에 동일하게 분배됨 */
+    max-width: 1200px;
+    /* 최대 너비 설정으로 너무 큰 화면에서도 콘텐츠가 과도하게 넓어지지 않도록 함 */
+}
+
+
+.product {
+    position: relative;
+    /* 상대적 위치 설정 */
+    display: inline-block;
+    /* 상품들을 옆으로 나열 */
+    text-align: center;
+    width: 18%;
+    /* 또는 원하는 폭 */
+    height: 300px;
+    /* 또는 원하는 높이 */
+    margin: 5px;
+    /* 상품 간격 조절 */
+}
+
+.product img {
+    display: block;
+    /* 이미지를 블록 요소로 설정 */
+    margin: 0 auto;
+    /* 이미지를 가로로 중앙 정렬 */
+    width: 100%;
+    height: auto;
+    /* 이미지가 컨테이너에 맞게 조정되도록 함 */
+    margin-top: 20px;
+}
+
+.product-info {
+    text-align: left;
+    /* 왼쪽 정렬 */
+    padding: 5px 0;
+    /* 위아래 여백 */
+    width: 100%;
+    /* product-info가 product의 전체 너비를 차지하도록 설정 */
+}
+
+.name,
+.price {
+    margin: 3px;
+}
+
+.name {
+    color: gray;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-info {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 10px;
+}
+
+.footer-info a {
+    color: #fff;
+    text-decoration: none;
+}
