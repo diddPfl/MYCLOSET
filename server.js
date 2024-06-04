@@ -31,13 +31,6 @@ let users = require('./public/userData.json'); // 유저데이터 읽어오기
 app.use(express.static(path.join(__dirname, 'public')));
 
 // 7. 라우팅(페이지 이동) 설정
-// 웹 브라우저에서 요청한 URL에 따라 적절한 처리를 하기 위해 라우팅을 설정한다.
-// '/' : 웹브라우저에서 localhost:3000/으로 요청하면 이 함수가 처리한다.
-// '/'는 루트 경로를 나타낸다. 즉, 루트에 있는 index.html 파일이 응답한다.
-// req : 요청, request 객체 즉, 웹브라우저에서 요청한 정보를 담고 있다.
-// res : 응답, response 객체 즉, 웹브라우저에서 응답할 정보를 담고 있다.
-// 응답할 정보는 일반적으로 html 페이지가 응답으로 전송된다.
-// get 방식은 쿼리스트링이 붙는 방식 ex) localhost:3000/index.html?id=123&password=1234
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
@@ -46,13 +39,14 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'login.html'))
 });
 
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'register.html'));
+});
+
+app.get('/notice', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'notice.html'));
+});
 //1. 브라우저에서 post 방식으로 전송한 데이터를 추출한다.
-// req.body는 브라우저에서 전송한 데이터 중에서 메세지 통의 바디에 포함된 데이터를 추출한다.
-// req.body.id는 브라우저에서 전송한 id 데이터를 추출한다.
-// req.body.pwd는 브라우저에서 전송한 pwd 데이터를 추출한다.
-// req.body.id와 같이 추출할 수 있는 것은 위에서 설정한 
-// app.use(exress.urlencoded({exptended: true})때문이다.)
-// post 방식은 일반적으로 서버의 데이터에 조작을 가할 때(추가, 수정, 삭제) 사용된다.
 app.post('/login', (req, res) => {
     const id = req.body.id; //id 데이터 추출
     const pwd = req.body.password; //password 데이터 추출
@@ -69,10 +63,7 @@ app.post('/login', (req, res) => {
     }
 });
 
-// 회원가입 페이지 요청 처리
-app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'register.html'));
-});
+
 
 // 회원 가입 처리 
 // 사용자가 입력한 데이터는 req.body에 저장되어 있다.
@@ -97,8 +88,6 @@ app.post('/register', (req, res) => {
         // 사용자 데이터를 users 배열에 추가
         users.push(user);
         // 사용자 데이터를 userData.json 파일에 저장
-        // stringify() 함수는 자바스크립트 객체를 JSON문자열로 반환한다.
-        // null은 replacer 함수로 사용할 함수를 지정한다. 2는 들여쓰기를 나타낸다.
         fs.writeFileSync('./public/userData.json', JSON.stringify(users, null, 2));
         // 회원가입 성공 메세지를 응답으로 전송
         res.send('<script>alert("회원가입 성공"); window.location.href="/login";</script>');
