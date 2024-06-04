@@ -130,7 +130,7 @@
             border-top: 1px solid black;
             margin: 0px;
             border: none;
-            width: 100%;
+            /* width: 100%; */
         }
 
         label {
@@ -139,6 +139,7 @@
             width: 200px;
             height: 50px;
         }
+        
 
         .form-input {
             border: none;
@@ -149,25 +150,22 @@
         }
 
         .form-div {
-            margin-bottom: 20px;
+            margin: 20px 0 10px 0;
             display: flex;
             align-items: center;
-            width: 500px;
         }
 
         .error {
-            display: none;                 
+            display: none;
             color: red;
-            font-size: 0.8em;              
-            margin-bottom: 10px;
+            font-size: 0.8em;
+            margin: 0 0 10px 200px;
+            vertical-align: top;
+            line-height: 1.2;
         }
 
-        .radioMsg {
-            margin: 0 20px 0;
-        }
-
-        .mailing {
-            float: left;
+        .radioLbl {
+            width: 100px;
         }
 
         .button-wrap {
@@ -183,14 +181,14 @@
             height: 50px;
         }
 
-        #submit {
+        #submitBtn {
             border: none;
             background-color: black;
             color: #fff;
             padding: 10px;
         }
 
-        #cancle {
+        #cancleBtn {
             background-color: #fff;
         }
     </style>
@@ -230,40 +228,45 @@
 
         <div class="divider"></div>
 
-        <form action="/register" method="post">
+        <form action="/register" method="post" id="regForm">
             <fieldset>
                 <div class="form-div">
                     <label for="id">Email</label>
-                    <input type="email" name="id" class="form-input" required>
-                    <p class="error" id="emailError">올바른 이메일 주소를 입력하세요.</p>
+                    <input type="email" name="id" class="form-input" id="id" required>
                 </div>
+                <p class="error" id="idError">올바른 이메일 주소를 입력하세요.</p>
                 <div class="form-div">
                     <label for="password">비밀번호</label>
-                    <input type="password" name="password" class="form-input"
-                    placeholder="영문+숫자+특수문자 조합 4자리이상" reqired>
+                    <input type="password" name="password" class="form-input" id="password"
+                        placeholder="영문+숫자+특수문자 조합 4자리이상" reqired>
                 </div>
+                <p class="error" id="pwdError">올바른 비밀번호를 입력하세요.</p>
                 <div class="form-div">
                     <label for="password2">비밀번호 확인</label>
-                    <input type="password" name="password2" class="form-input" required>
+                    <input type="password" name="password2" class="form-input" id="password2" required>
                 </div>
+                <p class="error" id="pwdError2">비밀번호가 일치하지 않습니다.</p>
                 <div class="form-div">
                     <label for="name">이름</label>
-                    <input type="text" name="name" class="form-input" required>
+                    <input type="text" name="name" class="form-input" id="name" placeholder="한글 2~4자리" required>
                 </div>
+                <p class="error" id="nameError">올바른 이름을 입력하세요.</p>
                 <div class="form-div">
                     <label for="tel">전화번호</label>
-                    <input type="tel" name="tel" class="form-input" required>
-                    
+                    <input type="tel" name="tel" class="form-input" id="tel" placeholder="000-(0)000-0000">
                 </div>
+                <p class="error" id="telError">올바른 전화번호를 입력하세요.</p>
                 <div class="form-div mailing">
-                    <label for="mailing">이벤트 정보</label>
-                    <input type="radio" name="mailing" value="no" checked><span class="radioMsg">수신</span>
-                    <input type="radio" name="mailing" value="yes"><span class="radioMsg">비수신</span>
+                    <label>이벤트 정보</label>
+                    <label for="okMail" class="radioLbl">
+                    <input type="radio" name="mailing" id="okMail" value="true" checked>&nbsp&nbsp수신</label>
+                    <label for="noMail" class="radioLbl">
+                    <input type="radio" name="mailing" id="noMail" value="false">&nbsp&nbsp비수신</label>
                 </div>
             </fieldset>
             <div class="button-wrap">
-                <button type="button" id="cancle">취소</button>
-                <button type="submit" id="submit">회원가입</button>
+                <button type="button" id="cancleBtn">취소</button>
+                <button type="submit" id="submitBtn">회원가입</button>
             </div>
         </form>
     </main>
@@ -290,8 +293,71 @@
         <!-- 자바스크립트 -->
         <script>
             //취소버튼에 뒤로가기 이벤트 부착
-            const cancle = document.querySelector('#cancle');
+            const cancle = document.querySelector('#cancleBtn');
             cancle.addEventListener('click', () => window.history.back());
+
+            //정규식 검증
+            const form = document.querySelector('#regForm');
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const id = document.querySelector('#id').value;
+                const password = document.querySelector('#password').value;
+                const password2 = document.querySelector('#password2').value;
+                const name = document.querySelector('#name').value;
+                const tel = document.querySelector('#tel').value;
+
+                //정규식
+                const idRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const pwdRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).{4,}$/;
+                const nameRegex = /^[가-힣]{2,4}$/;
+                const telRegex = /^\d{3}-\d{3,4}-\d{4}$/;
+
+                let valid = true;
+                //아이디 검증
+                if (!idRegex.test(id)) {
+                    document.querySelector('#idError').style.display = 'block';
+                    valid = false;
+                } else {
+                    document.querySelector('#idError').style.display = 'none';
+                }
+
+                //비밀번호 검증
+                if (!pwdRegex.test(password)) {
+                    document.querySelector('#pwdError').style.display = 'block';
+                    valid = false
+                } else {
+                    document.querySelector('#pwdError').style.display = 'none';
+                }
+
+                //비밀번호 불일치 검증
+                if (password !== password2) {
+                    document.querySelector('#pwdError2').style.display = 'block';
+                    valid = false;
+                } else {
+                    document.querySelector('#pwdError2').style.display = 'none';
+                }
+
+                //이름 검증
+                if (!nameRegex.test(name)) {
+                    document.querySelector('#nameError').style.display = 'block';
+                    valid = false;
+                } else {
+                    document.querySelector('#nameError').style.display = 'none';
+                }
+
+                //전화번호 검증
+                if (!telRegex.test(tel)) {
+                    document.querySelector('#telError').style.display = 'block';
+                    valid = false;
+                } else {
+                    document.querySelector('#telError').style.display = 'none';
+                }
+
+                if (valid) {
+                    form.submit();
+                }
+            });
+
         </script>
 </body>
 

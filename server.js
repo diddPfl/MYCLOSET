@@ -61,8 +61,8 @@ app.post('/login', (req, res) => {
     // 2.1 위에서 읽어온 users 데이터를 순회하면서 id와 password가 일치하는지 확인한다. 
     const user = users.find(user => user.id === id && user.password === pwd);
 
-    if (user) { // 2.2 id와 pwd가 일치하면
-        res.redirect('/'); // 2.3 메인페이지로 이동한다.
+    if (user) { // 2.2 id와 pwd가 일치하면 로그인 성공 메세지를 띄우고 메인페이지로 이동
+        res.send('<script>alert("로그인 성공!"); window.location.href = "/";</script>');
     } else { // 2.4 id와 pwd가 일치하지 않으면
         // 2.5 로그인 실패 메시지를 응답으로 전송한다.
         res.send('<script>alert("아이디 또는 비밀번호가 일치하지 않습니다."); window.history.back();</script>');
@@ -80,39 +80,17 @@ app.post('/register', (req, res) => {
     //사용자가 입력한 데이터 추출
     const id = req.body.id; //id 추출
     const pwd = req.body.password; //password 추출
-    const pwd2 = req.body.password2; //password2 추출
     const name = req.body.name;
     const tel = req.body.tel;
     const mailing = req.body.mailing;
 
-    //정규식
-    const idRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const pwdRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).{4,}$/;
-    const telRegex = /^\d{3}-\d{3,4}-\d{4}$/;
-
     //기존 사용자 데이터와 중복되는지 확인
     // 사용자가 입력한 id가 기존 사용자 데이터 users에 있는지 확인한다.
     const isDuplicated = users.find(user => user.id === id);
-    
-    //정규식 검증
-    const validId = idRegex.test(id);
-    const validPwd = pwdRegex.test(pwd);
-    const samePwd = (pwd === pwd2);
-    const validTel = telRegex.test(tel);
-
 
     //중복된 아이디라면
     if (isDuplicated) {
         res.send('<script>alert("이미 존재하는 아이디입니다."); window.history.back();</script>');
-        //잘못된 이메일이라면
-    } else if(!validId){
-        res.send('<script>alert("잘못된 이메일 형식입니다."); window.history.back();</script>');
-    } else if(!validPwd){
-        res.send('<script>alert("잘못된 비밀번호 형식입니다."); window.history.back();</script>');
-    } else if(!samePwd) {
-        res.send('<script>alert("비밀번호가 일치하지 않습니다."); window.history.back();</script>');
-    } else if (!validTel) {
-        res.send('<script>alert("전화번호를 정확히 입력해주세요."); window.history.back();</script>');
     } else {
         // 사용자 자바스크립트 객체 생성(객체 리터럴 방식)
         const user = {id:id, password:pwd, name:name, tel:tel, mailing:mailing}; //저장할 유저 객체 한개 생성

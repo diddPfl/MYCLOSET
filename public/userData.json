@@ -4,39 +4,40 @@
     "password": "a123!",
     "name": "홍길동",
     "tel": "010-1234-5678",
-    "mailing": "yes"
+    "mailing": "true"
   },
   {
     "id": "b@a.com",
     "password": "a123!",
     "name": "김길동",
     "tel": "010-1234-5679",
-    "mailing": "no"
+    "mailing": "false"
   },
   {
     "id": "c@a.com",
     "password": "a123!",
     "name": "이길동",
     "tel": "010-1234-5677",
-    "mailing": "yes"
+    "mailing": "true"
   },
   {
     "id": "f@a.com",
     "password": "a123!",
     "name": "유길동",
-    "mailing": "yes"
-  },
-  {
-    "id": "v@v.com",
-    "password": "123123",
-    "name": "김김",
-    "mailing": "no"
+    "mailing": "true"
   },
   {
     "id": "111@a.com",
-    "password": "123123!q",
+    "password": "a123!",
     "name": "유길동",
     "tel": "123-1234-1234",
-    "mailing": "no"
+    "mailing": "false"
+  },
+  {
+    "id": "g@a.com",
+    "password": "123!q",
+    "name": "김김",
+    "tel": "000-0000-0000",
+    "mailing": "false"
   }
 ]
