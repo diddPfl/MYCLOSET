@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Closet - 로그인 페이지</title>
+    <style>
+        /* 헤더 css */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #fff;
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            font-family: 'Times New Roman'
+        }
+
+        .search-box {
+            border-bottom: 1px solid #000;
+            margin-bottom: 15px;
+        }
+
+        .search-box input {
+            width: 200px;
+            padding: 8px;
+            border: none;
+            text-align: left;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            outline: none;
+        }
+
+        .search-box button {
+            color: black;
+            background-color: #fff;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-icons a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+            position: relative;
+        }
+
+        nav ul.main-nav {
+            list-style-type: none;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul.main-nav li {
+            margin: 0 15px;
+        }
+
+        nav ul.main-nav li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* 로그인폼 css */
+        main {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            font-size: 40px;
+            font-weight: lighter;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            height: 300px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        #id,
+        #password {
+            margin-bottom: 20px;
+            padding-left: 10px;
+            width: 350px;
+            height: 50px;
+        }
+
+        .find-link{
+            text-align: right;
+
+        }
+        #find-id, #find-password {
+            text-decoration: none;
+            color:#000;
+        }
+        #find-id:hover, #find-password:hover {
+            text-decoration : underline;
+        }
+
+        #find-id {
+            margin: 10px;
+        }
+        
+
+        .login,
+        .register {
+            padding: 10px;
+            font-size: 1em;
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 49%;
+            height: 50px
+        }
+
+        .button-wrap {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        /* footer css */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-info p,
+        .copy {
+            margin: 0 10px;
+            font-size: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 헤더 로고, 검색창, 로그인, 장바구니-->
+    <header class="head">
+        <div class="logo">MYCLOSET</div>
+        <div class="search-box">
+            <input type="text">
+            <button>search</button>
+        </div>
+        <div class="header-icons">
+            <a href="/register" class="join-icon">JOIN</a>
+            <a href="/login" class="login-icon">LOGIN</a>
+            <a href="#" class="my-icon">MY</a>
+            <a href="#" class="cart-icon">CART</a>
+        </div>
+    </header>
+
+    <!-- 네비 -->
+    <nav>
+        <ul class="main-nav">
+            <li><a href="#">NEW</a></li>
+            <li><a href="#">BEST</a></li>
+            <li><a href="#">WOMEN</a></li>
+            <li><a href="#">MEN</a></li>
+            <li><a href="#">EXCLUSIVE</a></li>
+            <li><a href="#">SALE</a></li>
+            <li><a href="#">기획전</a></li>
+        </ul>
+    </nav>
+
+    <!-- 로그인폼 -->
+    <main>
+        <div>
+            <h2>Login</h2>
+        </div>
+        <form action="/login" method="post" name="loginForm">
+            <div class="login-wrap">
+                <div>
+                    <label for="id">이메일ID</label>
+                    <input type="email" name="id" id="id" placeholder="이메일 ID를 @까지 정확하게 입력해주세요." required>
+                </div>
+                <div>
+                    <label for="password">비밀번호</label>
+                    <input type="password" name="password" id="password" placeholder="영문+숫자+특수문자 조합 4자리이상" required>
+                </div>
+                <div class="find-link">
+                    <a href="#" id="find-id">아이디 찾기</a> <a href="#" id="find-password">비밀번호 찾기</a>
+                </div>
+                <div class="button-wrap">
+                    <button type="submit" class="login" id="loginBtn">로그인</button>
+                    <button type="button" class="register" id="registerBtn">회원가입</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <!--bottom: 하단메뉴 + Copyright-->
+    <footer class="footer">
+        <footer>
+            <div class="footer-info">
+                <p>회사정보</p>
+                <p>이용약관</p>
+            </div>
+            <div class="copy">
+                COPYRIGHTⓒ by WEBDESIGN. ALL RIGHTS RESERVED
+            </div>
+            </div>
+            <div class="familysite">
+                <select name="sitelist">
+                    <option value="#">패밀리사이트1</option>
+                    <option value="#">패밀리사이트2</option>
+                    <option value="#">패밀리사이트3</option>
+                </select>
+            </div>
+        </footer>
+        <script>
+            //회원가입 링크 버튼
+            const rgBtn = document.querySelector('#registerBtn');
+            rgBtn.addEventListener('click', function () { window.location.href = "register.html" });
+
+    
+        </script>
+</body>
+
+</html>
