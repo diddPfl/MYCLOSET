@@ -7,7 +7,7 @@
     <title>MYCLOSET</title>
     <!--<link href="css/style.css" rel="stylesheet">-->
     <style>
-         body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -27,31 +27,31 @@
             font-family: 'Times New Roman'
         }
 
-        .search-box{
+        .search-box {
             border-bottom: 1px solid #000;
             margin-bottom: 15px;
         }
 
         .search-box input {
-        width: 200px;
-        padding: 8px;
-        border: none;
-        text-align: left;
-        outline: none;
+            width: 200px;
+            padding: 8px;
+            border: none;
+            text-align: left;
+            outline: none;
         }
 
         .search-box input:focus {
-        outline: none;
+            outline: none;
         }
 
         .search-box button {
-        color: black;
-        background-color: #fff;
-        padding: 8px 16px;
-        border: none;
-        cursor: pointer;
+            color: black;
+            background-color: #fff;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
         }
-        
+
 
         .header-icons {
             display: flex;
@@ -111,7 +111,8 @@
             height: auto;
         }
 
-        .prev, .next {
+        .prev,
+        .next {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -131,19 +132,21 @@
         }
 
         footer {
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
         }
 
-        .footer-info{
-        margin: 0 10px;
-        font-size: 10px;list-style-type: none;
+        .footer-info {
+            margin: 0 10px;
+            font-size: 10px;
+            list-style-type: none;
             margin-bottom: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
         tbody {
             display: table-row-group;
             vertical-align: middle;
@@ -184,308 +187,319 @@
             margin: 0 auto;
             background-color: #ffffff;
         }
-        .bbs-table-list{
+
+        .bbs-table-list {
             display: flex;
             justify-content: center;
 
         }
-        a:link{
+
+        a:link {
             color: black;
-            text-decoration-line : none
+            text-decoration-line: none
         }
-        a:visited{
+
+        a:visited {
             color: black;
-            text-decoration-line : none
+            text-decoration-line: none
         }
-        a:hover{
+
+        a:hover {
             color: black;
-            text-decoration-line : none
+            text-decoration-line: none
         }
-        caption{
+
+        caption {
             margin-bottom: 20px;
             font-family: Arial, sans-serif;
             font-weight: bold;
             font-size: 18px;
         }
     </style>
+</head>
 
-<header class="head">
-    <div class="logo">MYCLOSET</div>
-    <div class="search-box">
-        <input type="text">
-        <button>search</button>
-    </div>
-    <div class="header-icons">
-        <a href="/register" class="join-icon">JOIN</a>
-        <a href="/login" class="login-icon">LOGIN</a>
-        <a href="#" class="my-icon">MY</a>
-        <a href="#" class="cart-icon">CART</a>
-    </div>
-</header>
-<nav>
-    <ul class="main-nav">
-        <li><a href="#">NEW</a></li>
-        <li><a href="#">BEST</a></li>
-        <li><a href="#">WOMEN</a></li>
-        <li><a href="#">MEN</a></li>
-        <li><a href="#">EXCLUSIVE</a></li>
-        <li><a href="#">SALE</a></li>
-        <li><a href="#">기획전</a></li>
-    </ul>
-</nav>
+<body>
+    <!-- 헤더 -->
+    <header class="head">
+        <div class="logo">MYCLOSET</div>
+        <div class="search-box">
+            <input type="text">
+            <button>search</button>
+        </div>
+        <div class="header-icons">
+            <a href="/register" class="join-icon">JOIN</a>
+            <a href="/login" class="login-icon">LOGIN</a>
+            <a href="#" class="my-icon">MY</a>
+            <a href="#" class="cart-icon">CART</a>
+        </div>
+    </header>
+    <nav>
+        <ul class="main-nav">
+            <li><a href="#">NEW</a></li>
+            <li><a href="#">BEST</a></li>
+            <li><a href="#">WOMEN</a></li>
+            <li><a href="#">MEN</a></li>
+            <li><a href="#">EXCLUSIVE</a></li>
+            <li><a href="#">SALE</a></li>
+            <li><a href="#">기획전</a></li>
+        </ul>
+    </nav>
+
     <!-- .공지사항 리스트 시작 -->
     <main>
-    <div class="bbs-table-list">
-        <table summary="No, content,Name,Data,Hits">
-            <caption>[     공지사항     ]</caption>
-            <colgroup>
-                <col width="50">
-                <col width="*">
-                <col width="110">
-                <col width="90">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th scope="col">
-                        <div class="tb-center">No.</div>
-                    </th>
-                    <th scope="col">
-                        <div class="tb-center">Content</div>
-                    </th>
-                    <th scope="col">
-                        <div class="tb-center">Name</div>
-                    </th>
-                    <th scope="col">
-                        <div class="tb-center">Date</div>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <div id="content">
+        <div class="bbs-table-list">
+            <table summary="No, content,Name,Data,Hits">
+                <caption>[ 공지사항 ]</caption>
+                <colgroup>
+                    <col width="50">
+                    <col width="*">
+                    <col width="110">
+                    <col width="90">
+                </colgroup>
+                <thead>
                     <tr>
-                        <td>
-                            <div class="tb-center">233</div>
-                        </td>
-                        <td>
-                            <div class="tb-left">
-                                <a href="content1.html">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">
-                                MYCLOSET </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">2024/03/19</div>
-                        </td>
-
+                        <th scope="col">
+                            <div class="tb-center">No.</div>
+                        </th>
+                        <th scope="col">
+                            <div class="tb-center">Content</div>
+                        </th>
+                        <th scope="col">
+                            <div class="tb-center">Name</div>
+                        </th>
+                        <th scope="col">
+                            <div class="tb-center">Date</div>
+                        </th>
                     </tr>
-                    <!--. 공지사항 리스트 끝! -->
+                </thead>
+                <tbody>
+                    <div id="content">
+                        <tr>
+                            <td>
+                                <div class="tb-center">233</div>
+                            </td>
+                            <td>
+                                <div class="tb-left">
+                                    <a href="content1.html">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">
+                                    MYCLOSET </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">2024/03/19</div>
+                            </td>
 
-                    <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
-                    <tr>
-                        <td>
-                            <div class="tb-center">221</div>
-                        </td>
-                        <td>
-                            <div class="tb-left">
-                                <a href="#">적립금 이용약관 개정 안내</a>
+                        </tr>
+                        <!--. 공지사항 리스트 끝! -->
 
-                            </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">
-                                MYCLOSET </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">2024/03/11</div>
-                        </td>
+                        <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
+                        <tr>
+                            <td>
+                                <div class="tb-center">221</div>
+                            </td>
+                            <td>
+                                <div class="tb-left">
+                                    <a href="#">적립금 이용약관 개정 안내</a>
 
-                    </tr>
-                    <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
-                    <tr>
-                        <td>
-                            <div class="tb-center">211</div>
-                        </td>
-                        <td>
-                            <div class="tb-left">
-                                <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">
+                                    MYCLOSET </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">2024/03/11</div>
+                            </td>
 
-                            </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">
-                                MYCLOSET </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">2024/03/04</div>
-                        </td>
+                        </tr>
+                        <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
+                        <tr>
+                            <td>
+                                <div class="tb-center">211</div>
+                            </td>
+                            <td>
+                                <div class="tb-left">
+                                    <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
 
-                    </tr>
-                    <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
-                    <tr>
-                        <td>
-                            <div class="tb-center">179</div>
-                        </td>
-                        <td>
-                            <div class="tb-left">
-                                <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">
+                                    MYCLOSET </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">2024/03/04</div>
+                            </td>
 
-                            </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">
-                                MYCLOSET </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">2024/02/19</div>
-                        </td>
+                        </tr>
+                        <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
+                        <tr>
+                            <td>
+                                <div class="tb-center">179</div>
+                            </td>
+                            <td>
+                                <div class="tb-left">
+                                    <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
 
-                    </tr>
-                    <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
-                    <tr>
-                        <td>
-                            <div class="tb-center">173</div>
-                        </td>
-                        <td>
-                            <div class="tb-left">
-                                <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">
+                                    MYCLOSET </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">2024/02/19</div>
+                            </td>
 
-                            </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">
-                                MYCLOSET </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">2024/02/09</div>
-                        </td>
+                        </tr>
+                        <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
+                        <tr>
+                            <td>
+                                <div class="tb-center">173</div>
+                            </td>
+                            <td>
+                                <div class="tb-left">
+                                    <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
 
-                    </tr>
-                    <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
-                    <tr>
-                        <td>
-                            <div class="tb-center">143</div>
-                        </td>
-                        <td>
-                            <div class="tb-left">
-                                <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">
+                                    MYCLOSET </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">2024/02/09</div>
+                            </td>
 
-                            </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">
-                                MYCLOSET </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">2024/02/01</div>
-                        </td>
+                        </tr>
+                        <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
+                        <tr>
+                            <td>
+                                <div class="tb-center">143</div>
+                            </td>
+                            <td>
+                                <div class="tb-left">
+                                    <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
 
-                    </tr>
-                    <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
-                    <tr>
-                        <td>
-                            <div class="tb-center">138</div>
-                        </td>
-                        <td>
-                            <div class="tb-left">
-                                <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">
+                                    MYCLOSET </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">2024/02/01</div>
+                            </td>
 
-                            </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">
-                                MYCLOSET </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">2024/01/19</div>
-                        </td>
+                        </tr>
+                        <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
+                        <tr>
+                            <td>
+                                <div class="tb-center">138</div>
+                            </td>
+                            <td>
+                                <div class="tb-left">
+                                    <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
 
-                    </tr>
-                    <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
-                    <tr>
-                        <td>
-                            <div class="tb-center">133</div>
-                        </td>
-                        <td>
-                            <div class="tb-left">
-                                <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">
+                                    MYCLOSET </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">2024/01/19</div>
+                            </td>
 
-                            </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">
-                                MYCLOSET </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">2024/01/14</div>
-                        </td>
+                        </tr>
+                        <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
+                        <tr>
+                            <td>
+                                <div class="tb-center">133</div>
+                            </td>
+                            <td>
+                                <div class="tb-left">
+                                    <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
 
-                    </tr>
-                    <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
-                    <tr>
-                        <td>
-                            <div class="tb-center">88</div>
-                        </td>
-                        <td>
-                            <div class="tb-left">
-                                <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">
+                                    MYCLOSET </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">2024/01/14</div>
+                            </td>
 
-                            </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">
-                                MYCLOSET </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">2024/01/04</div>
-                        </td>
+                        </tr>
+                        <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
+                        <tr>
+                            <td>
+                                <div class="tb-center">88</div>
+                            </td>
+                            <td>
+                                <div class="tb-left">
+                                    <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
 
-                    </tr>
-                    <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
-                    <tr>
-                        <td>
-                            <div class="tb-center">68</div>
-                        </td>
-                        <td>
-                            <div class="tb-left">
-                                <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">
+                                    MYCLOSET </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">2024/01/04</div>
+                            </td>
 
-                            </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">
-                                MYCLOSET </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">2024/01/02</div>
-                        </td>
+                        </tr>
+                        <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
+                        <tr>
+                            <td>
+                                <div class="tb-center">68</div>
+                            </td>
+                            <td>
+                                <div class="tb-left">
+                                    <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
 
-                    </tr>
-                    <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
-                    <tr>
-                        <td>
-                            <div class="tb-center">33</div>
-                        </td>
-                        <td>
-                            <div class="tb-left">
-                                <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">
+                                    MYCLOSET </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">2024/01/02</div>
+                            </td>
 
-                            </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">
-                                MYCLOSET </div>
-                        </td>
-                        <td>
-                            <div class="tb-center">2023/12/19</div>
-                        </td>
+                        </tr>
+                        <!--. 게시글 리스트 시작(한페이지당 게시글 수) -->
+                        <tr>
+                            <td>
+                                <div class="tb-center">33</div>
+                            </td>
+                            <td>
+                                <div class="tb-left">
+                                    <a href="#">개인정보보호법 개정 (휴면계정 정책 폐지) 에 따른 휴면 정책 변경 안내</a>
 
-                    </tr>
-                    <!--. 게시글 리스트 끝 -->
-                </div>
-            </tbody>
-        </main>
-    </div>
-    
+                                </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">
+                                    MYCLOSET </div>
+                            </td>
+                            <td>
+                                <div class="tb-center">2023/12/19</div>
+                            </td>
+
+                        </tr>
+                        <!--. 게시글 리스트 끝 -->
+                    </div>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+
 </html>
