@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="ko">
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/main
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MYCLOSET</title>
+<<<<<<< HEAD
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+=======
     <!--<link href="css/style.css" rel="stylesheet">-->
     <style>
         body {
@@ -147,20 +157,29 @@
 <body>
     <!-- 헤더 로고, 검색창, 로그인, 장바구니-->
     <header class="head">
+>>>>>>> origin/main
         <div class="logo">MYCLOSET</div>
         <div class="search-box">
             <input type="text">
             <button>search</button>
         </div>
         <div class="header-icons">
+<<<<<<< HEAD
+            <a href="#" class="join-icon">JOIN</a>
+            <a href="#" class="login-icon">LOGIN</a>
+=======
             <a href="/register" class="join-icon">JOIN</a>
             <a href="/login" class="login-icon">LOGIN</a>
+>>>>>>> origin/main
             <a href="#" class="my-icon">MY</a>
             <a href="#" class="cart-icon">CART</a>
         </div>
     </header>
 
+<<<<<<< HEAD
+=======
     <!-- 네비 -->
+>>>>>>> origin/main
     <nav>
         <ul class="main-nav">
             <li><a href="#">NEW</a></li>
@@ -173,6 +192,16 @@
         </ul>
     </nav>
 
+<<<<<<< HEAD
+    <main>
+        <div class="slider">
+            <div class="slides">
+                <img src="../img/main1.jpg" alt="main1">
+                <img src="../img/main2.jpg" alt="main2">
+                <img src="../img/main3.jpg" alt="main3">
+                <img src="../img/main4.jpg" alt="main4">
+                <img src="../img/main5.jpg" alt="main5">
+=======
     <!-- 배너 슬라이드 -->
     <main>
         <div class="slider">
@@ -183,22 +212,114 @@
                 <img src="./img/main4.jpg" alt="main4">
                 <img src="./img/main5.jpg" alt="main5">
 
+>>>>>>> origin/main
             </div>
             <button class="prev" onclick="prevSlide()">&#10094;</button>
             <button class="next" onclick="nextSlide()">&#10095;</button>
         </div>
     </main>
 
+<<<<<<< HEAD
+    <div class="container">
+        <div class="news">
+            <h2>NEWS</h2>
+            <ul>
+                <li><a href="#">[안내] 5/15일 (석가탄신일) 고객센터 휴무 안내</a></li>
+                <li><a href="#">[안내] 5/6일 대체휴일 고객센터 휴무 안내</a></li>
+                <li><a href="#">[안내] 5/1(근로자의 날) 고객센터 휴무 안내</a></li>
+                <li><a href="#">[안내]  물류센터 이전으로 인한 중단 공지</a></li>
+                <li><a href="#">[안내] 사이트 점검으로 인한 서비스 일시중지 (3/23 토)</a></li>
+            </ul>
+        </div>
+        <div class="customer-center">
+            <h2>고객센터</h2>
+            <div class="phone-number">1566-5027</div>
+            <div class="hours">운영시간 : 평일 09:00~18:00 (점심시간 : 12:30~13:30)</div>
+            <div class="email">cs_help@mycloset.co.kr</div>
+            <div class="buttons">
+                <button>FAQ</button>
+                <button>1:1 문의</button>
+            </div>
+            <div class="social-icons">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Pinterest</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <ul class="footer-info">
+            <li><a href="#">회사정보</a></li>
+            <li><a href="#">입점상담</a></li>
+=======
 
     <!--bottom: 하단메뉴 + Copyright-->
     <footer>
         <div class="footer-info">
             <li><a href="#">회사정보</a></li>
             <li><a href="#">입점상단</a></li>
+>>>>>>> origin/main
             <li><a href="#">제휴문의</a></li>
             <li><a href="#">이용약관</a></li>
             <li><a href="#">개인정보처리방침</a></li>
             <li><a href="#">고객센터</a></li>
+<<<<<<< HEAD
+        </ul>
+    </footer>
+
+    <script>
+       let currentSlide = 1;
+
+function setupSlides() {
+    const slides = document.querySelector('.slides');
+    const firstSlide = slides.children[0].cloneNode(true);
+    const lastSlide = slides.children[slides.children.length - 1].cloneNode(true);
+    slides.appendChild(firstSlide);
+    slides.insertBefore(lastSlide, slides.children[0]);
+}
+
+function showSlide(index) {
+    const slides = document.querySelector('.slides');
+    const totalSlides = slides.children.length;
+    slides.style.transition = 'transform 0.5s ease-in-out';
+    slides.style.transform = `translateX(-${index * 100}%)`;
+
+    if (index >= totalSlides - 1) {
+        setTimeout(() => {
+            slides.style.transition = 'none';
+            slides.style.transform = `translateX(-100%)`;
+            currentSlide = 1;
+        }, 500);
+    } else if (index <= 0) {
+        setTimeout(() => {
+            slides.style.transition = 'none';
+            slides.style.transform = `translateX(-${(totalSlides - 2) * 100}%)`;
+            currentSlide = totalSlides - 2;
+        }, 500);
+    } else {
+        currentSlide = index;
+    }
+}
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+    showSlide(currentSlide - 1);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupSlides();
+    showSlide(currentSlide);
+    setInterval(nextSlide, 5000);
+});
+
+    </script>
+</body>
+=======
         </div>
       </footer>
 </body>
@@ -236,3 +357,4 @@
 </script>
 
 </html>
+>>>>>>> origin/main
