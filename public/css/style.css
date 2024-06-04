@@ -76,7 +76,7 @@ main {
 
 .slider {
     position: relative;
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -86,7 +86,7 @@ main {
 }
 
 .slides img {
-    width: 100%;
+    width: 60%;
     height: auto;
 }
 
