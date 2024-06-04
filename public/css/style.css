@@ -234,3 +234,7 @@ footer {
     text-decoration: none;
     color:black;
 }
+a[href="./index.html"] {
+    text-decoration: none;
+    color:black;
+}

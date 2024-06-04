@@ -6,114 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Closet - 회원가입 페이지</title>
     <link rel="stylesheet" href="./css/style.css">
-    <style>
-        /* 메인 css */
-        main {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            background-color: #fff;
-            display: flex;
-            flex-direction: column;
-            padding-top: 40px;
-        }
-
-        h2 {
-            font-size: 40px;
-            font-weight: lighter;
-        }
-
-        .divider {
-            width: 90%;
-            height: 1px;
-            background-color: black;
-            margin: 50px 0;
-
-        }
-
-        fieldset {
-            border-top: 1px solid black;
-            margin: 0px;
-            border: none;
-            /* width: 100%; */
-        }
-
-        label {
-            display: flex;
-            align-items: center;
-            width: 200px;
-            height: 50px;
-        }
-        
-
-        .form-input {
-            border: none;
-            background-color: #f4f4f4;
-            height: 30px;
-            width: 350px;
-            padding: 10px
-        }
-
-        .form-div {
-            margin: 20px 0 10px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .error {
-            display: none;
-            color: red;
-            font-size: 0.8em;
-            margin: 0 0 10px 200px;
-            vertical-align: top;
-            line-height: 1.2;
-        }
-
-        .radioLbl {
-            width: 100px;
-        }
-
-        .button-wrap {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            padding: 50px 0;
-
-        }
-
-        button {
-            width: 200px;
-            height: 50px;
-        }
-
-        #submitBtn {
-            border: none;
-            background-color: black;
-            color: #fff;
-            padding: 10px;
-        }
-
-        #cancleBtn {
-            background-color: #fff;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/register.css">
 </head>
 
 <body>
     <!-- 헤더 로고, 검색창, 로그인, 장바구니-->
     <!-- 헤더 로고, 검색창, 로그인, 장바구니-->
     <header class="head">
-        <div class="logo">MYCLOSET</div>
+        <a href="./index.html"><div class="logo">MYCLOSET</div></a>
         <div class="search-box">
             <input type="text">
             <button>search</button>
         </div>
 
         <div class="header-icons">
-            <a href="/register" class="join-icon">JOIN</a>
-            <a href="/login" class="login-icon">LOGIN</a>
+            <a href="./register.html" class="join-icon">JOIN</a>
+            <a href="./login.html" class="login-icon">LOGIN</a>
             <a href="#" class="my-icon">MY</a>
             <a href="#" class="cart-icon">CART</a>
         </div>
