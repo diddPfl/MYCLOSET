@@ -94,7 +94,8 @@
             height: 80vh;
             background-color: #f4f4f4;
         }
-        h2{
+
+        h2 {
             font-size: 40px;
             font-weight: lighter;
         }
@@ -112,12 +113,30 @@
             margin-right: 20px;
         }
 
-        #id, #password {
+        #id,
+        #password {
             margin-bottom: 20px;
             padding-left: 10px;
             width: 350px;
             height: 50px;
         }
+
+        .find-link{
+            text-align: right;
+
+        }
+        #find-id, #find-password {
+            text-decoration: none;
+            color:#000;
+        }
+        #find-id:hover, #find-password:hover {
+            text-decoration : underline;
+        }
+
+        #find-id {
+            margin: 10px;
+        }
+        
 
         .login,
         .register {
@@ -148,11 +167,11 @@
             align-items: center;
         }
 
-        .footer-info p, .copy {
+        .footer-info p,
+        .copy {
             margin: 0 10px;
             font-size: 10px;
         }
-        
     </style>
 
 </head>
@@ -195,16 +214,17 @@
             <div class="login-wrap">
                 <div>
                     <label for="id">이메일ID</label>
-                    <input type="email" name="id" id="id"
-                    placeholder="이메일 ID를 @까지 정확하게 입력해주세요." required>
+                    <input type="email" name="id" id="id" placeholder="이메일 ID를 @까지 정확하게 입력해주세요." required>
                 </div>
                 <div>
                     <label for="password">비밀번호</label>
-                    <input type="password" name="password" id="password"
-                    placeholder="영문+숫자+특수문자 조합 8~16자리" required>
+                    <input type="password" name="password" id="password" placeholder="영문+숫자+특수문자 조합 4자리이상" required>
+                </div>
+                <div class="find-link">
+                    <a href="#" id="find-id">아이디 찾기</a> <a href="#" id="find-password">비밀번호 찾기</a>
                 </div>
                 <div class="button-wrap">
-                    <button type="submit" class="login">로그인</button>
+                    <button type="submit" class="login" id="loginBtn">로그인</button>
                     <button type="button" class="register" id="registerBtn">회원가입</button>
                 </div>
             </div>
@@ -229,10 +249,13 @@
                 </select>
             </div>
         </footer>
-    <script>
-        const rgBtn = document.querySelector('#registerBtn');
-        rgBtn.addEventListener('click', function() {window.location.href = "register.html"});
-    </script>
+        <script>
+            //회원가입 링크 버튼
+            const rgBtn = document.querySelector('#registerBtn');
+            rgBtn.addEventListener('click', function () { window.location.href = "register.html" });
+
+    
+        </script>
 </body>
 
 </html>

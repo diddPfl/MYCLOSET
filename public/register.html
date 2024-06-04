@@ -147,39 +147,52 @@
             width: 350px;
             padding: 10px
         }
+
         .form-div {
             margin-bottom: 20px;
             display: flex;
             align-items: center;
             width: 500px;
         }
-        span {
+
+        .error {
+            display: none;                 
+            color: red;
+            font-size: 0.8em;              
+            margin-bottom: 10px;
+        }
+
+        .radioMsg {
             margin: 0 20px 0;
         }
+
         .mailing {
-            float:left;
+            float: left;
         }
-        .button-wrap{
+
+        .button-wrap {
             display: flex;
             justify-content: space-around;
             width: 100%;
             padding: 50px 0;
-            
+
         }
+
         button {
             width: 200px;
             height: 50px;
         }
+
         #submit {
             border: none;
             background-color: black;
             color: #fff;
             padding: 10px;
         }
+
         #cancle {
             background-color: #fff;
         }
-
     </style>
 </head>
 
@@ -221,28 +234,31 @@
             <fieldset>
                 <div class="form-div">
                     <label for="id">Email</label>
-                    <input type="email" name="id" class="form-input">
+                    <input type="email" name="id" class="form-input" required>
+                    <p class="error" id="emailError">올바른 이메일 주소를 입력하세요.</p>
                 </div>
                 <div class="form-div">
                     <label for="password">비밀번호</label>
-                    <input type="password" name="password" class="form-input">
+                    <input type="password" name="password" class="form-input"
+                    placeholder="영문+숫자+특수문자 조합 4자리이상" reqired>
                 </div>
                 <div class="form-div">
                     <label for="password2">비밀번호 확인</label>
-                    <input type="password" name="password2" class="form-input">
+                    <input type="password" name="password2" class="form-input" required>
                 </div>
                 <div class="form-div">
                     <label for="name">이름</label>
-                    <input type="text" name="name" class="form-input">
+                    <input type="text" name="name" class="form-input" required>
                 </div>
                 <div class="form-div">
-                    <label for="phone">전화번호</label>
-                    <input type="tel" name="phone" class="form-input">
+                    <label for="tel">전화번호</label>
+                    <input type="tel" name="tel" class="form-input" required>
+                    
                 </div>
                 <div class="form-div mailing">
                     <label for="mailing">이벤트 정보</label>
-                    <input type="radio" name="mailing" value="no" checked><span>수신</span>
-                    <input type="radio" name="mailing" value="yes"><span>비수신</span>
+                    <input type="radio" name="mailing" value="no" checked><span class="radioMsg">수신</span>
+                    <input type="radio" name="mailing" value="yes"><span class="radioMsg">비수신</span>
                 </div>
             </fieldset>
             <div class="button-wrap">
@@ -276,7 +292,6 @@
             //취소버튼에 뒤로가기 이벤트 부착
             const cancle = document.querySelector('#cancle');
             cancle.addEventListener('click', () => window.history.back());
-
         </script>
 </body>
 
