@@ -5,148 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MYCLOSET</title>
-    <!--<link href="css/style.css" rel="stylesheet">-->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background-color: #fff;
-        }
-
-        .logo {
-            font-size: 2em;
-            font-weight: bold;
-            font-family: 'Times New Roman'
-        }
-
-        .search-box{
-            border-bottom: 1px solid #000;
-            margin-bottom: 15px;
-        }
-
-        .search-box input {
-        width: 200px;
-        padding: 8px;
-        border: none;
-        text-align: left;
-        outline: none;
-        }
-
-        .search-box input:focus {
-        outline: none;
-        }
-
-        .search-box button {
-        color: black;
-        background-color: #fff;
-        padding: 8px 16px;
-        border: none;
-        cursor: pointer;
-        }
-        
-
-        .header-icons {
-            display: flex;
-            align-items: center;
-        }
-
-        .header-icons a {
-            margin-left: 15px;
-            text-decoration: none;
-            color: #000;
-            font-size: 14px;
-            position: relative;
-        }
-
-        nav ul.main-nav {
-            list-style-type: none;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        nav ul.main-nav li {
-            margin: 0 15px;
-        }
-
-        nav ul.main-nav li a {
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-        }
-
-        main {
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-
-        .slider {
-            display: flex;
-            justify-content: top;
-            align-items: center;
-            width: 50%;
-        }
-
-        .slides {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .slides img {
-            width: 100%;
-            height: auto;
-        }
-
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-
-        footer {
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-        }
-
-        .footer-info{
-        margin: 0 10px;
-        font-size: 10px;list-style-type: none;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <!-- 헤더 로고, 검색창, 로그인, 장바구니-->
-    <header class="head">
+    <header>
         <div class="logo">MYCLOSET</div>
         <div class="search-box">
             <input type="text">
@@ -160,7 +23,6 @@
         </div>
     </header>
 
-    <!-- 네비 -->
     <nav>
         <ul class="main-nav">
             <li><a href="#">NEW</a></li>
@@ -173,7 +35,6 @@
         </ul>
     </nav>
 
-    <!-- 배너 슬라이드 -->
     <main>
         <div class="slider">
             <div class="slides">
@@ -182,57 +43,98 @@
                 <img src="./img/main3.jpg" alt="main3">
                 <img src="./img/main4.jpg" alt="main4">
                 <img src="./img/main5.jpg" alt="main5">
-
             </div>
             <button class="prev" onclick="prevSlide()">&#10094;</button>
             <button class="next" onclick="nextSlide()">&#10095;</button>
         </div>
     </main>
 
+    <div class="container">
+        <div class="news">
+            <h2>NEWS</h2>
+            <ul>
+                <li><a href="#">[안내] 5/15일 (석가탄신일) 고객센터 휴무 안내</a></li>
+                <li><a href="#">[안내] 5/6일 대체휴일 고객센터 휴무 안내</a></li>
+                <li><a href="#">[안내] 5/1(근로자의 날) 고객센터 휴무 안내</a></li>
+                <li><a href="#">[안내]  물류센터 이전으로 인한 중단 공지</a></li>
+                <li><a href="#">[안내] 사이트 점검으로 인한 서비스 일시중지 (3/23 토)</a></li>
+            </ul>
+        </div>
+        <div class="customer-center">
+            <h2>고객센터</h2>
+            <div class="phone-number">1566-5027</div>
+            <div class="hours">운영시간 : 평일 09:00~18:00 (점심시간 : 12:30~13:30)</div>
+            <div class="email">cs_help@mycloset.co.kr</div>
+            <div class="buttons">
+                <button>FAQ</button>
+                <button>1:1 문의</button>
+            </div>
+            <div class="social-icons">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Pinterest</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+    </div>
 
-    <!--bottom: 하단메뉴 + Copyright-->
     <footer>
-        <div class="footer-info">
+        <ul class="footer-info">
             <li><a href="#">회사정보</a></li>
-            <li><a href="#">입점상단</a></li>
+            <li><a href="#">입점상담</a></li>
             <li><a href="#">제휴문의</a></li>
             <li><a href="#">이용약관</a></li>
             <li><a href="#">개인정보처리방침</a></li>
             <li><a href="#">고객센터</a></li>
-        </div>
-      </footer>
-</body>
+        </ul>
+    </footer>
 
+    <script>
+        let currentSlide = 1;
 
-<!-- 슬라이드 -->
-<script>
-    let currentSlide = 0;
-
-    function showSlide(index) {
-        const slides = document.querySelector('.slides');
-        const totalSlides = slides.children.length;
-        if (index >= totalSlides) {
-            currentSlide = 0;
-        } else if (index < 0) {
-            currentSlide = totalSlides - 1;
-        } else {
-            currentSlide = index;
+        function setupSlides() {
+            const slides = document.querySelector('.slides');
+            const firstSlide = slides.children[0].cloneNode(true);
+            const lastSlide = slides.children[slides.children.length - 1].cloneNode(true);
+            slides.appendChild(firstSlide);
+            slides.insertBefore(lastSlide, slides.children[0]);
         }
-        slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
 
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
+        function showSlide(index) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = slides.children.length;
+            slides.style.transition = 'transform 0.5s ease-in-out';
+            slides.style.transform = `translateX(-${index * 100}%)`;
 
-    function prevSlide() {
-        showSlide(currentSlide - 1);
-    }
+            if (index >= totalSlides - 1) {
+                setTimeout(() => {
+                    slides.style.transition = 'none';
+                    slides.style.transform = `translateX(-100%)`;
+                    currentSlide = 1;
+                }, 500);
+            } else if (index <= 0) {
+                setTimeout(() => {
+                    slides.style.transition = 'none';
+                    slides.style.transform = `translateX(-${(totalSlides - 2) * 100}%)`;
+                    currentSlide = totalSlides - 2;
+                }, 500);
+            } else {
+                currentSlide = index;
+            }
+        }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        showSlide(currentSlide);
-    });
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
 
-</script>
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
 
-</html>
+        document.addEventListener('DOMContentLoaded', () => {
+            setupSlides();
+            showSlide(currentSlide);
+            setInterval(nextSlide, 5000); // 3초마다 자동으로 슬라이드 넘기기
+        });
+    </script>
+</body>
