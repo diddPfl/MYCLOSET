@@ -10,6 +10,12 @@ header {
     align-items: center;
     padding: 15px 20px;
     background-color: #fff;
+    
+}
+
+header a {
+    text-decoration: none;
+    color: black;
 }
 
 .logo {
@@ -77,6 +83,7 @@ main {
     /* 페이지 너비를 전체의 90%로 설정, 여기서는 10% 여백이 양 옆에 동일하게 분배됨 */
     max-width: 1200px;
     /* 최대 너비 설정으로 너무 큰 화면에서도 콘텐츠가 과도하게 넓어지지 않도록 함 */
+    margin-bottom: 100px;
 }
 
 
@@ -92,6 +99,7 @@ main {
     /* 또는 원하는 높이 */
     margin: 5px;
     /* 상품 간격 조절 */
+    
 }
 
 .product img {
@@ -116,7 +124,8 @@ main {
 
 .name,
 .price {
-    margin: 3px;
+    margin: 5px;
+    font-family:  sans-serif;
 }
 
 .name {
