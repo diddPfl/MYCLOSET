@@ -228,3 +228,9 @@ footer {
     color: #fff;
     text-decoration: none;
 }
+
+/* 추가 */
+#news-link{
+    text-decoration: none;
+    color:black;
+}

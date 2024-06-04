@@ -44,22 +44,26 @@
             height: 50px;
         }
 
-        .find-link{
+        .find-link {
             text-align: right;
 
         }
-        #find-id, #find-password {
+
+        #find-id,
+        #find-password {
             text-decoration: none;
-            color:#000;
+            color: #000;
         }
-        #find-id:hover, #find-password:hover {
-            text-decoration : underline;
+
+        #find-id:hover,
+        #find-password:hover {
+            text-decoration: underline;
         }
 
         #find-id {
             margin: 10px;
         }
-        
+
 
         .login,
         .register {
@@ -84,33 +88,33 @@
 </head>
 
 <body>
-<!-- 헤더 로고, 검색창, 로그인, 장바구니-->
-<header class="head">
-    <div class="logo">MYCLOSET</div>
-    <div class="search-box">
-        <input type="text">
-        <button>search</button>
-    </div>
+    <!-- 헤더 로고, 검색창, 로그인, 장바구니-->
+    <header class="head">
+        <div class="logo">MYCLOSET</div>
+        <div class="search-box">
+            <input type="text">
+            <button>search</button>
+        </div>
 
-    <div class="header-icons">
-        <a href="/register" class="join-icon">JOIN</a>
-        <a href="/login" class="login-icon">LOGIN</a>
-        <a href="#" class="my-icon">MY</a>
-        <a href="#" class="cart-icon">CART</a>
-    </div>
-</header>
+        <div class="header-icons">
+            <a href="/register" class="join-icon">JOIN</a>
+            <a href="/login" class="login-icon">LOGIN</a>
+            <a href="#" class="my-icon">MY</a>
+            <a href="#" class="cart-icon">CART</a>
+        </div>
+    </header>
 
-<nav>
-    <ul class="main-nav">
-        <li><a href="./productlist.html">NEW</a></li>
-        <li><a href="#">BEST</a></li>
-        <li><a href="#">WOMEN</a></li>
-        <li><a href="#">MEN</a></li>
-        <li><a href="#">EXCLUSIVE</a></li>
-        <li><a href="#">SALE</a></li>
-        <li><a href="#">기획전</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul class="main-nav">
+            <li><a href="./productlist.html">NEW</a></li>
+            <li><a href="#">BEST</a></li>
+            <li><a href="#">WOMEN</a></li>
+            <li><a href="#">MEN</a></li>
+            <li><a href="#">EXCLUSIVE</a></li>
+            <li><a href="#">SALE</a></li>
+            <li><a href="#">기획전</a></li>
+        </ul>
+    </nav>
 
     <!-- 로그인폼 -->
     <main>
@@ -139,21 +143,20 @@
     </main>
     <!--bottom: 하단메뉴 + Copyright-->
     <footer class="footer">
-        <footer>
-            <div class="footer-info">
-                <li><a href="#">회사정보</a></li>
-                <li><a href="#">입점상단</a></li>
-                <li><a href="#">제휴문의</a></li>
-                <li><a href="#">이용약관</a></li>
-                <li><a href="#">개인정보처리방침</a></li>
-                <li><a href="#">고객센터</a></li>
-                </ul>
-        </footer>
-        <script>
-            //회원가입 링크 버튼
-            const rgBtn = document.querySelector('#registerBtn');
-            rgBtn.addEventListener('click', function () { window.location.href = "register.html" });
-        </script>
+        <div class="footer-info">
+            <li><a href="#">회사정보</a></li>
+            <li><a href="#">입점상단</a></li>
+            <li><a href="#">제휴문의</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">고객센터</a></li>
+            </ul>
+    </footer>
+    <script>
+        //회원가입 링크 버튼
+        const rgBtn = document.querySelector('#registerBtn');
+        rgBtn.addEventListener('click', function () { window.location.href = "register.html" });
+    </script>
 </body>
 
 </html>
