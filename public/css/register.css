@@ -78,6 +78,9 @@ button {
     width: 200px;
     height: 50px;
 }
+button:hover{
+    cursor: pointer;
+}
 
 #submitBtn {
     border: none;
