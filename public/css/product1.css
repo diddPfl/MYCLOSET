@@ -1,0 +1,122 @@
+main {
+    display: flex;
+    justify-content: center;
+    margin:100px;
+}
+
+.product-container {
+    display: flex;
+    padding: 100px 0 100px 0;
+}
+
+.img-container{
+    position: relative;
+    top: 0;
+    left: 0;
+    
+}
+.product-name {
+    margin: 0;
+}
+
+.product-detail {
+    margin-left: 80px;
+}
+
+.review {
+    margin-bottom: 10px;
+
+}
+
+#review-star {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#review-link {
+    margin: 0 10px 0 10px;
+    color: black;
+}
+
+#review-link:hover {
+    color: red;
+}
+
+#share-icon {
+    color: black;
+    font-size: 1.2rem;
+
+}
+
+#newMember{
+    margin-left: 10px;
+    font-size: 0.8rem;
+    color:rgb(110, 110, 110)
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin: 50px 0;
+}
+
+.inputLbl {
+    display: inline-block;
+    width: 100px;
+}
+
+select {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(221, 221, 221);
+    height: 50px;
+    width: 250px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+.buttons{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+button[type="button"] {
+    border:none;
+    color: #fff;
+    background-color: black;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    font-size: 1.05rem;
+}
+button[type="button"]:hover{
+    background-color: rgb(46, 45, 45);
+    cursor: pointer;
+}
+
+/* 숨겨진 주문상세 */
+.orderBox{
+    background-color: rgb(233, 233, 233);
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    display: none;
+
+}
+#quantityLbl{
+    margin-right: 20px;
+}
+input[type="number"]{
+    width: 50px;
+    height: 20px;
+}
+#totalPrice {
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+#orderDetail {
+    margin : 0 0 20px 0;
+}

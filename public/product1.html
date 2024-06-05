@@ -6,101 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품페이지</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/상품페이지.css">
+    <link rel="stylesheet" href="./css/product1.css">
     <script src="https://kit.fontawesome.com/20dc616ca1.js" crossorigin="anonymous"></script>
-    <style>
-        main {
-            display: flex;
-            justify-content: center;
-            margin-top:100px;
-        }
-
-        .product-container {
-            display: flex;
-            padding: 100px 0 200px 0;
-        }
-
-        .product-name {
-            margin: 0;
-        }
-
-        .product-detail {
-            margin-left: 50px;
-        }
-
-        .review {
-            margin-bottom: 10px;
-
-        }
-
-        #review-star {
-            color: red;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        #review-link {
-            margin: 0 10px 0 10px;
-            color: black;
-        }
-
-        #review-link:hover {
-            color: red;
-        }
-
-        #share-icon {
-            color: black;
-            font-size: 1.2rem;
-
-        }
-
-        #newMember{
-            margin-left: 10px;
-            font-size: 0.8rem;
-            color:rgb(110, 110, 110)
-        }
-
-        .divider {
-            width: 100%;
-            height: 2px;
-            background-color: black;
-            margin: 50px 0;
-        }
-
-        .inputLbl {
-            display: inline-block;
-            width: 100px;
-        }
-
-        select {
-            border: none;
-            border-radius: 10px;
-            background-color: rgb(221, 221, 221);
-            height: 50px;
-            width: 250px;
-            padding-left: 10px;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-        .buttons{
-            display: flex;
-            margin-top: 30px;
-            justify-content: space-around;
-        }
-        button[type="button"] {
-            border:none;
-            color: #fff;
-            background-color: black;
-            padding: 10px;
-            width: 150px;
-            height: 50px;
-            font-size: 1.05rem;
-        }
-        button[type="button"]:hover{
-            background-color: rgb(46, 45, 45);
-            cursor: pointer;
-        }
-    </style>
 </head>
 
 
@@ -137,7 +44,7 @@
     <main>
         <!-- 여기에 상품 페이지 -->
         <div class="product-container">
-            <div></div>
+            <div class="img-container">
                 <img src="./img/list1.jpeg" alt="productImg1" class="product-img">
             </div>
             <section class="product-detail">
@@ -153,7 +60,7 @@
                 <p>신규회원 가격 : 36,000원 <span id="newMember">신규가입시 20% 할인 쿠폰 제공</span></p>
                 <div class="divider"></div>
                 <span class="inputLbl">색상 선택 :</span>
-                <select name="color">
+                <select name="color" id="colorBox">
                     <option value="">선택해주세요.</option>
                     <option value="charcoal">charcoal</option>
                     <option value="white">white</option>
@@ -162,7 +69,7 @@
                 </select>
                 <div>
                     <span class="inputLbl">사이즈 선택 :</span>
-                    <select name="size">
+                    <select name="size" id="sizeBox">
                         <option value="">선택해주세요.</option>
                         <option value="S">Small</option>
                         <option value="M">Medium</option>
@@ -171,10 +78,16 @@
                         <option value="XXL">XXLarge</option>
                     </select>
                 </div>
+                <div class="orderBox">
+                    <p id="orderDetail">? / ?</p>
+                    <input type="number" name="quantity" id="quantity" value=1>
+                    <span id="totalPrice">45,000원</span>
+                </div>
+
                 <div class="buttons">
-                <button type="button">주문하기</button>
-                <button type="button">장바구니</button>
-            </div>
+                    <button type="button">주문하기</button>
+                    <button type="button">장바구니</button>
+                </div>
             </section>
         </div>
 
@@ -191,6 +104,33 @@
         </ul>
     </footer>
 
+    <!-- 자바스크립트 -->
+    <script>
+        //색상 선택 후 사이즈 선택하도록 알림
+        const colorBox = document.querySelector('#colorBox');
+        const sizeBox = document.querySelector('#sizeBox');
+        const quantity = document.querySelector('#quantity');
+
+        sizeBox.addEventListener('change', (event) => {
+            const selectedColor = colorBox.value;
+            if (selectedColor === '') {
+                alert('색상을 먼저 선택해주세요.');
+                sizeBox.value = '';
+            } else {
+                //오더 박스에 표시되도록
+                
+                const orderDetail = document.querySelector('#orderDetail');
+                document.querySelector('.orderBox').style.display = 'block';
+                orderDetail.innerText = colorBox.value + ' / ' + sizeBox.value;
+            }
+        });
+
+        //orderBox에 가격표시
+        quantity.addEventListener('change', (event) => {
+            const totalPrice = document.querySelector('#totalPrice');
+            totalPrice.innerText = quantity.value * 45000 + '원';
+        });
+    </script>
 </body>
 
 </html>
