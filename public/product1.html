@@ -133,7 +133,8 @@
         //orderBox에 가격표시
         quantity.addEventListener('change', (event) => {
             const totalPrice = document.querySelector('#totalPrice');
-            totalPrice.innerText = quantity.value * 45000 + '원';
+            const calculatedPrice = quantity.value * 45000;
+            totalPrice.innerText = calculatedPrice.toLocaleString() + '원';
         });
     </script>
 </body>
