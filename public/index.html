@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,9 @@
 <body>
     <!-- 헤더 로고, 검색창, 로그인, 장바구니-->
     <header class="head">
-        <a href="./index.html"><div class="logo">MYCLOSET</div></a>
+        <a href="./index.html">
+            <div class="logo">MYCLOSET</div>
+        </a>
         <div class="search-box">
             <input type="text">
             <button>search</button>
@@ -40,24 +43,34 @@
         <div class="slider">
             <div class="slides">
                 <div class="pic">
-                    <img src="./img/main1.jpg" alt="main1">
-                    <div class="text">여름맞이<br>BIG SALE</div>
+                    <a href="./productlist.html">
+                        <img src="./img/main1.jpg" alt="main1">
+                        <div class="text">여름맞이<br>BIG SALE</div>
+                    </a>
                 </div>
                 <div class="pic">
-                    <img src="./img/main2.jpg" alt="main2">
-                    <div class="text">반팔티 모음<br>SALE</div>
+                    <a href="./productlist.html">
+                        <img src="./img/main2.jpg" alt="main2">
+                        <div class="text">반팔티 모음<br>SALE</div>
+                    </a>
                 </div>
                 <div class="pic">
-                    <img src="./img/main3.jpg" alt="main3">
-                    <div class="text">여름맞이<br> BIG SALE</div>
+                    <a href="./productlist.html">
+                        <img src="./img/main3.jpg" alt="main3">
+                        <div class="text">여름을 맞이한<br>MYCLOSET</div>
+                    </a>
                 </div>
                 <div class="pic">
-                    <img src="./img/main4.jpg" alt="main4">
-                    <div class="text">여름맞이<br> BIG SALE</div>
+                    <a href="./productlist.html">
+                        <img src="./img/main4.jpg" alt="main4">
+                        <div class="text">SummerWear<br>Jacket</div>
+                    </a>
                 </div>
                 <div class="pic">
-                    <img src="./img/main5.jpg" alt="main5">
-                    <div class="text">여름맞이<br> BIG SALE</div>
+                    <a href="./productlist.html">
+                        <img src="./img/main5.jpg" alt="main5">
+                        <div class="text">SummerWear<br>OPS</div>
+                    </a>
                 </div>
             </div>
             <button class="prev" onclick="prevSlide()">&#10094;</button>
@@ -65,7 +78,8 @@
         </div>
     </main>
     
-    
+
+
 
 
 
@@ -99,44 +113,74 @@
     </div>
 
     <footer>
-        <div class="footer-info">
+        <ul class="footer-info">
             <li><a href="#">회사정보</a></li>
             <li><a href="#">입점상단</a></li>
             <li><a href="#">제휴문의</a></li>
             <li><a href="#">이용약관</a></li>
             <li><a href="#">개인정보처리방침</a></li>
             <li><a href="#">고객센터</a></li>
-            </ul>
+        </ul>
     </footer>
 
     <script>
         let currentSlide = 1;
-
-        function showSlide(index) {
-            const slides = document.querySelector('.slides');
-            const totalSlides = slides.children.length;
-            if (index >= totalSlides) {
-                currentSlide = 0;
-            } else if (index < 0) {
-                currentSlide = totalSlides - 1;
-            } else {
-                currentSlide = index;
-            }
-            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
-
+        let isAnimating = false;
+    
         document.addEventListener('DOMContentLoaded', () => {
-            showSlide(currentSlide);
+            const slides = document.querySelector('.slides');
+            const slideElements = Array.from(slides.children);
+            const totalSlides = slideElements.length;
+    
+            // 첫 번째와 마지막 슬라이드를 복제하여 무한 루프 효과를 만듭니다.
+            const firstSlide = slideElements[0].cloneNode(true);
+            const lastSlide = slideElements[totalSlides - 1].cloneNode(true);
+    
+            slides.appendChild(firstSlide);
+            slides.insertBefore(lastSlide, slideElements[0]);
+    
+            // 슬라이드를 이동시키는 함수
+            function showSlide(index) {
+                if (isAnimating) return;
+                isAnimating = true;
+    
+                const totalSlidesWithClones = slides.children.length;
+                slides.style.transition = 'transform 0.5s ease-in-out';
+                slides.style.transform = `translateX(-${index * 100}%)`;
+    
+                currentSlide = index;
+    
+                // 애니메이션 끝난 후에 무한 루프 효과를 위한 슬라이드 위치 조정
+                slides.addEventListener('transitionend', () => {
+                    isAnimating = false;
+                    if (currentSlide === 0) {
+                        slides.style.transition = 'none';
+                        currentSlide = totalSlides - 2;
+                        slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+                    } else if (currentSlide === totalSlides - 1) {
+                        slides.style.transition = 'none';
+                        currentSlide = 1;
+                        slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+                    }
+                }, { once: true });
+            }
+    
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+    
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+            }
+    
+            // 첫 번째 슬라이드로 자연스럽게 이동
+            setTimeout(() => {
+                showSlide(1);
+            }, 0);
+    
+            document.querySelector('.next').addEventListener('click', nextSlide);
+            document.querySelector('.prev').addEventListener('click', prevSlide);
         });
-
     </script>
-
+    </body>
 </html>
