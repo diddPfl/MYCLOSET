@@ -106,11 +106,16 @@
 
     <!-- 자바스크립트 -->
     <script>
-        //색상 선택 후 사이즈 선택하도록 알림
         const colorBox = document.querySelector('#colorBox');
         const sizeBox = document.querySelector('#sizeBox');
         const quantity = document.querySelector('#quantity');
 
+        //색상을 선택하면 사이즈 콤보박스가 초기화되도록
+        colorBox.addEventListener('change', (event) => {
+            sizeBox.value = '';
+        });
+
+        //색상 선택 후 사이즈 선택하도록 알림
         sizeBox.addEventListener('change', (event) => {
             const selectedColor = colorBox.value;
             if (selectedColor === '') {
