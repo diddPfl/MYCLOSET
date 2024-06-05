@@ -6,111 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Closet - 로그인 페이지</title>
     <link rel="stylesheet" href="./css/style.css">
-    <style>
-        /* 로그인폼 css */
-        main {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 80vh;
-            background-color: #f4f4f4;
-        }
-
-        #login-title {
-            font-size: 40px;
-            font-weight: lighter;
-        }
-
-        form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 500px;
-            height: 300px;
-        }
-
-        label {
-            font-weight: bold;
-            margin-right: 20px;
-        }
-
-        #id,
-        #password {
-            margin-bottom: 20px;
-            padding-left: 10px;
-            width: 350px;
-            height: 50px;
-        }
-
-        .find-link{
-            text-align: right;
-
-        }
-        #find-id, #find-password {
-            text-decoration: none;
-            color:#000;
-        }
-        #find-id:hover, #find-password:hover {
-            text-decoration : underline;
-        }
-
-        #find-id {
-            margin: 10px;
-        }
-        
-
-        .login,
-        .register {
-            padding: 10px;
-            font-size: 1em;
-            background-color: #000000;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            width: 49%;
-            height: 50px
-        }
-
-        .button-wrap {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/login.css">
 
 </head>
 
 <body>
-<!-- 헤더 로고, 검색창, 로그인, 장바구니-->
-<header class="head">
-    <div class="logo">MYCLOSET</div>
-    <div class="search-box">
-        <input type="text">
-        <button>search</button>
-    </div>
+    <header class="head">
+        <a href="./index.html"><div class="logo">MYCLOSET</div></a>
+        <div class="search-box">
+            <input type="text">
+            <button>search</button>
+        </div>
 
-    <div class="header-icons">
-        <a href="/register" class="join-icon">JOIN</a>
-        <a href="/login" class="login-icon">LOGIN</a>
-        <a href="#" class="my-icon">MY</a>
-        <a href="#" class="cart-icon">CART</a>
-    </div>
-</header>
+        <div class="header-icons">
+            <a href="./register.html" class="join-icon">JOIN</a>
+            <a href="./login.html" class="login-icon">LOGIN</a>
+            <a href="#" class="my-icon">MY</a>
+            <a href="#" class="cart-icon">CART</a>
+        </div>
+    </header>
 
-<nav>
-    <ul class="main-nav">
-        <li><a href="./productlist.html">NEW</a></li>
-        <li><a href="#">BEST</a></li>
-        <li><a href="#">WOMEN</a></li>
-        <li><a href="#">MEN</a></li>
-        <li><a href="#">EXCLUSIVE</a></li>
-        <li><a href="#">SALE</a></li>
-        <li><a href="#">기획전</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul class="main-nav">
+            <li><a href="./productlist.html">NEW</a></li>
+            <li><a href="#">BEST</a></li>
+            <li><a href="#">WOMEN</a></li>
+            <li><a href="#">MEN</a></li>
+            <li><a href="#">EXCLUSIVE</a></li>
+            <li><a href="#">SALE</a></li>
+            <li><a href="#">기획전</a></li>
+        </ul>
+    </nav>
 
     <!-- 로그인폼 -->
     <main>
@@ -131,29 +57,28 @@
                     <a href="#" id="find-id">아이디 찾기</a> <a href="#" id="find-password">비밀번호 찾기</a>
                 </div>
                 <div class="button-wrap">
-                    <button type="submit" class="login" id="loginBtn">로그인</button>
                     <button type="button" class="register" id="registerBtn">회원가입</button>
+                    <button type="submit" class="login" id="loginBtn">로그인</button>
                 </div>
             </div>
         </form>
     </main>
     <!--bottom: 하단메뉴 + Copyright-->
     <footer class="footer">
-        <footer>
-            <div class="footer-info">
-                <li><a href="#">회사정보</a></li>
-                <li><a href="#">입점상단</a></li>
-                <li><a href="#">제휴문의</a></li>
-                <li><a href="#">이용약관</a></li>
-                <li><a href="#">개인정보처리방침</a></li>
-                <li><a href="#">고객센터</a></li>
-                </ul>
-        </footer>
-        <script>
-            //회원가입 링크 버튼
-            const rgBtn = document.querySelector('#registerBtn');
-            rgBtn.addEventListener('click', function () { window.location.href = "register.html" });
-        </script>
+        <div class="footer-info">
+            <li><a href="#">회사정보</a></li>
+            <li><a href="#">입점상단</a></li>
+            <li><a href="#">제휴문의</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">고객센터</a></li>
+            </ul>
+    </footer>
+    <script>
+        //회원가입 링크 버튼
+        const rgBtn = document.querySelector('#registerBtn');
+        rgBtn.addEventListener('click', function () { window.location.href = "./register.html" });
+    </script>
 </body>
 
 </html>
