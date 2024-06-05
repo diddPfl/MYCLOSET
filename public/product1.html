@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품페이지</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/상품페이지.css">
+    <script src="https://kit.fontawesome.com/20dc616ca1.js" crossorigin="anonymous"></script>
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+            margin-top:100px;
+        }
+
+        .product-container {
+            display: flex;
+            padding: 100px 0 200px 0;
+        }
+
+        .product-name {
+            margin: 0;
+        }
+
+        .product-detail {
+            margin-left: 50px;
+        }
+
+        .review {
+            margin-bottom: 10px;
+
+        }
+
+        #review-star {
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #review-link {
+            margin: 0 10px 0 10px;
+            color: black;
+        }
+
+        #review-link:hover {
+            color: red;
+        }
+
+        #share-icon {
+            color: black;
+            font-size: 1.2rem;
+
+        }
+
+        #newMember{
+            margin-left: 10px;
+            font-size: 0.8rem;
+            color:rgb(110, 110, 110)
+        }
+
+        .divider {
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            margin: 50px 0;
+        }
+
+        .inputLbl {
+            display: inline-block;
+            width: 100px;
+        }
+
+        select {
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(221, 221, 221);
+            height: 50px;
+            width: 250px;
+            padding-left: 10px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .buttons{
+            display: flex;
+            margin-top: 30px;
+            justify-content: space-around;
+        }
+        button[type="button"] {
+            border:none;
+            color: #fff;
+            background-color: black;
+            padding: 10px;
+            width: 150px;
+            height: 50px;
+            font-size: 1.05rem;
+        }
+        button[type="button"]:hover{
+            background-color: rgb(46, 45, 45);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <a href="./index.html">
+            <div class="logo">MYCLOSET</div>
+        </a>
+        <div class="search-box">
+            <input type="text">
+            <button>search</button>
+        </div>
+        <div class="header-icons">
+            <a href="./register.html" class="join-icon">JOIN</a>
+            <a href="./login.html" class="login-icon">LOGIN</a>
+            <a href="#" class="my-icon">MY</a>
+            <a href="#" class="cart-icon">CART</a>
+        </div>
+
+    </header>
+
+    <nav>
+        <ul class="main-nav">
+            <li><a href="./productlist.html">NEW</a></li>
+            <li><a href="#">BEST</a></li>
+            <li><a href="#">WOMEN</a></li>
+            <li><a href="#">MEN</a></li>
+            <li><a href="#">EXCLUSIVE</a></li>
+            <li><a href="#">SALE</a></li>
+            <li><a href="#">기획전</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- 여기에 상품 페이지 -->
+        <div class="product-container">
+            <div></div>
+                <img src="./img/list1.jpeg" alt="productImg1" class="product-img">
+            </div>
+            <section class="product-detail">
+                <h2 class="product-name">Basset Hound T-shirt</h2>
+                <p>[06/13 예약배송]</p>
+                <div class="review">
+                    <span id="review-star">&#10030;&#10030;&#10030;&#10030;&#10030;</span>
+                    <span>(4.9 점)</span>
+                    <a href="#" id="review-link">2,245개 리뷰 ></a>
+                    <a href="#" id="share-icon"><i class="fa-solid fa-share-nodes"></i></a>
+                </div>
+                <p>가격 : 45000원 </p>
+                <p>신규회원 가격 : 36,000원 <span id="newMember">신규가입시 20% 할인 쿠폰 제공</span></p>
+                <div class="divider"></div>
+                <span class="inputLbl">색상 선택 :</span>
+                <select name="color">
+                    <option value="">선택해주세요.</option>
+                    <option value="charcoal">charcoal</option>
+                    <option value="white">white</option>
+                    <option value="black">black</option>
+                    <option value="blue">blue</option>
+                </select>
+                <div>
+                    <span class="inputLbl">사이즈 선택 :</span>
+                    <select name="size">
+                        <option value="">선택해주세요.</option>
+                        <option value="S">Small</option>
+                        <option value="M">Medium</option>
+                        <option value="L">Large</option>
+                        <option value="XL">XLarge</option>
+                        <option value="XXL">XXLarge</option>
+                    </select>
+                </div>
+                <div class="buttons">
+                <button type="button">주문하기</button>
+                <button type="button">장바구니</button>
+            </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer>
+        <ul class="footer-info">
+            <li><a href="#">회사정보</a></li>
+            <li><a href="#">입점상담</a></li>
+            <li><a href="#">제휴문의</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+    </footer>
+
+</body>
+
+</html>
